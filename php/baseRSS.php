@@ -13,7 +13,7 @@ or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 ?>
 
 <?php
-$sql = 'SELECT Titre, Region FROM News WHERE Date=sysdate';
+$sql = 'SELECT * FROM AdresseRss';
 $query=mysqli_query($dbLink,$sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
 ?>

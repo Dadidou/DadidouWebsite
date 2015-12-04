@@ -1,15 +1,17 @@
 <?php 
 	include 'PHP/baseNews.php';
-	include 'utils.inc.php';
-	start_page(Dadidou);
-	$var = takeText ();
-?>
-	<head> 
+        require 'utils.inc.php';
+	//include 'utils.inc.php';
+	//start_page(Dadidou);
+
+
+echo '<!DOCTYPE html><html lang="fr">
+	<head> ' ;
+	$var = takeText() ;	?>
 		<script language="JavaScript">
-		<!--
-		//PLF-http://www.monjavascript.net/
+		
 		var position=0;
-		var msg= <?php echo (string)  $var ;?>
+		var msg= '<?php echo $var;?>';
 		var msg="     "+msg;
 		var longue=msg.length;
 		var fois=(70/msg.length)+1;
@@ -23,6 +25,10 @@
 		window.onload = textdefil;
 		//-->
 		</script>
+           <meta charset="UTF-8"></meta>
+	<title>"Notice Me!"</title>
+	<link rel="stylesheet" href="css/style.css"></link>
+	<link href="Images/favicon.ico" rel="shortcut icon"></link>     
 	</head>
 	<body>
 		<form name="form1">
@@ -40,34 +46,38 @@
 		</aside>
 		<section id="carte">
 		</section>
-		<article>
-			<h2 id="legende"> Légende </h2>
+		<article id="legende">
+			<h2> Légende </h2>
 			<ul id="gravite">
 				<li>
-					<!-- img couleur-->
-					<p> : Grande gravité </p>
+					<div id="grandeGravite"></div>
+					<p id="grandeGravitep"> : Grande gravité </p>
 				</li>
 				<li>
 					<!-- img couleur-->
-					<p> : Moyenne gravité </p>
+					<div id="moyenneGravite"></div>
+					<p id="moyenneGravitep"> : Moyenne gravité </p>
 				</li>
 				<li>
 					<!-- img couleur-->
-					<p> : Faible gravité </p>
+					<div id="faibleGravite"></div>
+					<p id="faibleGravitep"> : Faible gravité </p>
 				</li>
 			</ul>
 			<ul id="etat">
 				<li>
-					<!-- img couleur-->
-					<p> : En cours </p>
+					<div id="rond"></div>
+					<p id="enCours"> : En cours </p>
 				</li>
 				<li>
 					<!-- img couleur-->
-					<p> : Terminé </p>
+					<div id="carre"></div>
+					<p id="fini"> : Fini </p>
 				</li>
 				<li>
 					<!-- img couleur-->
-					<p> : Alerte </p>
+					<div id="triangle"></div>
+					<p id="alerte"> : Alerte </p>
 				</li>
 			</ul>
 		</article>

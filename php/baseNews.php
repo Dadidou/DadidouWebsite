@@ -38,9 +38,8 @@ while($dbRow=mysqli_fetch_assoc($query)){
 		$valReturn;
 		while($dbRow=mysqli_fetch_assoc($query)){
 			$valReturn = $dbRow['Type'] . ' ' . $dbRow['Titre'] . ' ' . $dbRow['Region'] . ' ' . $dbRow['gravite'];
-			
+			return $valReturn;
 		}
 		
-		return $valReturn;
 	}
 ?>

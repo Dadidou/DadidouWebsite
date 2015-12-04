@@ -1,4 +1,4 @@
-
+﻿
                                    /* CREATION DE LA MAP SUR LA PAGE*/
 function initialiser() {
   var latlng = new google.maps.LatLng(46.779231, 6.659431);
@@ -74,3 +74,22 @@ function addMarker(coordX, coordY){
 
   // gestion de l'aire
 }//addMarker()
+
+
+
+
+function getCountry(country) {
+      geocoder.geocode( { 'address': country }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+             map.setCenter(results[0].geometry.location);
+             var marker = new google.maps.Marker({
+                 map: map,
+                 position: results[0].geometry.location
+             });
+          } else {
+            alert("Geocode was not successful for the following reason: " + status);
+          }
+      });
+  }
+
+ getCountry('USA');

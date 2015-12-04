@@ -1,16 +1,21 @@
 
-
+                                   /* CREATION DE LA MAP SUR LA PAGE*/
 function initialiser() {
   var latlng = new google.maps.LatLng(46.779231, 6.659431);
   //objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
   //de définir des options d'affichage de notre carte
+
+
+
   var options = {
     center: latlng,
     zoom: 2,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+  }; // options pour la google map
 
+  /* LATITUDE, LONGITUDE DE TEST */
   var myLatlng = {lat: -25.363, lng: 131.044};
+  /*LATITUDE, LONGITUDE DE TEST */
 
   //constructeur de la carte qui prend en paramêtre le conteneur HTML
   //dans lequel la carte doit s'afficher et les options
@@ -18,8 +23,8 @@ function initialiser() {
   //google.maps.event.addListener(map, 'clickOnMap', centerOnMap );
 
 
-  //Création de marker selon le nombre de donnée
 
+  // définition du marker
   var marker = new google.maps.Marker({
     position: myLatlng,
     map:map,
@@ -27,7 +32,7 @@ function initialiser() {
     title: 'Click to zoom'
   });
 
-
+  
   map.addListener('center_changed', function(){
     window.setTimeout(function(){
       map.panTo(marker.getPosition()); // change le centre de la map aux coordonnées du marqueur
@@ -48,7 +53,7 @@ function initialiser() {
       center : marker.getPosition(),
       radius: Math.sqrt(1500000)*100
     });
-    marker.setMap(null);
+
 
 
   });
